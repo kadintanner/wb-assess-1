@@ -16,7 +16,16 @@ console.log(greaterThanTen(arr))
 //   bWords(['banana', 'orange', 'apple', 'Bonobo', 'kiwi', 'pear']);
 //   => ['banana', 'Bonobo]
 function bWords(words) {
-  return words.filter[0] === b
+  let newArr = []
+
+for (let word of words) {
+  // if (word[0] === 'b' || word[0] === 'B')
+  if (word[0].toLowerCase() === 'b') {
+    newArr.push(word)
+  }
+}
+
+  return newArr
 }
 
 // Add all the elements from additionalItems to the end of originalArray.
@@ -24,19 +33,29 @@ function bWords(words) {
 // Ex.:
 //  extend([1, 2, 3], [4, 5, 6]);
 //  => [1, 2, 3, 4, 5, 6]
-function extend(originalArray, additionalItems) {}
+function extend(originalArray, additionalItems) {
+  const combinedArray = [...originalArray, ...additionalItems]
+  return combinedArray
+}
 
 // Return an array of all items with the given length.
 // Ex.:
 //   itemsWithLength(['a', 'bbb', 'cccc', 'dddddd', 'eee'], 3);
 //   => ['bbb', 'eee']
-function itemsWithLength(items, length) {}
+function itemsWithLength(items, length) {
+  for (let i = 0; i < items.length; i++) 
+    if (items[i].length === length) {
+      return items[i]
+    }
+}
 
 // Return an array with every other element from the input array (start with index 0).
 // Ex.:
 //   everyOtherItem(['a', 'b', 'c', 'd', 'e']);
 //   => ['a', 'c', 'e']
-function everyOtherItem(items) {}
+function everyOtherItem(items) {
+  
+}
 
 // Given a list of words and a letter, return the indexes of the words that
 // start with that letter. You can assume that the words and letter will always
@@ -60,7 +79,14 @@ function smallestNItems(items, n) {}
 // Ex.:
 //   findIndex(['a', 'b', 'c', 'a', 'b', 'c'], 'c');
 //   => 2
-function findIndex(items, value) {}
+function findIndex(items, value) {
+  for (let i = 0; i < items.length; i ++)
+    if (items[i] === value) {
+      return i
+    }
+
+    return undefined
+}
 
 // Given a start number and stop number, return a new array containing all the numbers
 // between the start and stop number.

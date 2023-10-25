@@ -36,7 +36,7 @@ function approximatelyEqual(x, y) {
 //   fullName('John', 'Doe');
 //   => 'John Doe'
 function fullName(firstName, lastName) {
-  return 'firstName' + 'lastName'
+  return `${firstName} ${lastName}`
 }
 
 // Generate the sentence "PERSON was drinking BEVERAGE at LOCATION" using the
@@ -46,10 +46,7 @@ function fullName(firstName, lastName) {
 //   => 'Kay was drinking coffee at the local cafe.'
 
 function generateSentence(person, beverage, location) {
-  let person = kevin
-  let beverage = maté
-  let location = Chile  
-  return ('Kevin was drinking Maté at Chile')
+  return `${person} was drinking ${beverage} at ${location}`
 }
 
 // Return the given string with all vowels replced with '*' characters.
@@ -57,14 +54,42 @@ function generateSentence(person, beverage, location) {
 //   censorVowels('javascript');
 //   => 'j*v*scr*pt'
 function censorVowels(string) {
-  return string.replace('aeiou', '*')
+  let cencoredString = ''
+
+  for (let letter of string) {
+    if (letter === 'a') {
+      cencoredString += '*'
+    } else if (letter === 'e') {
+      cencoredString += '*'
+    } else if (letter === 'i') {
+      cencoredString += '*'
+    } else if (letter === 'o') {
+      cencoredString += '*'
+    } else if (letter === 'u') {
+      cencoredString += '*'
+    } else {
+      cencoredString += letter
+    }
+  }
+
+  return cencoredString
 }
 
 // Return the given string in sticky case.
 // Ex.:
 //   stickyCase('hello world');
 //   => 'hElLo wOrLd'
-function stickyCase(string) {}
+function stickyCase(string) {
+  let newArr = []
+
+  for (let letter of string) {
+    if (letter % 2 === 0 ) {
+      newArr += letter.toUpperCase()
+    }
+  }
+
+  return newArr
+}
 
 // Return the given string in leetspeak. Leetspeak is a modified version of
 // English where characters are replaced by numbers or symbols. For this
@@ -79,14 +104,28 @@ function stickyCase(string) {}
 //   leetspeak('javascript');
 //   => 'j4v45cr1p7'
 function leetspeak(string) {
-  let a = 4;
-  let e = 3;
-  let i = 1;
-  let o = 0;
-  let s = 5;
-  let t = 7;
+  let leetSpeakString = ""
+
+  for (let character of string) {
+    if (character === "a") {
+      leetSpeakString += "4"
+    } else if (character === "e") {
+      leetSpeakString += "3"
+    } else if (character === "i") {
+      leetSpeakString += "1"
+    } else if (character === "o") {
+      leetSpeakString += "0"
+    } else if (character === "s") {
+      leetSpeakString += "5"
+    } else if (character === "t") {
+      leetSpeakString += "7"
+    } else {
+      leetSpeakString += character
+    }
+  }
+
+  return leetSpeakString
 }
-return string.replace(leetspeak)
 
 export {
   approximatelyEqual,
