@@ -43,10 +43,13 @@ function extend(originalArray, additionalItems) {
 //   itemsWithLength(['a', 'bbb', 'cccc', 'dddddd', 'eee'], 3);
 //   => ['bbb', 'eee']
 function itemsWithLength(items, length) {
-  for (let i = 0; i < items.length; i++) 
-    if (items[i].length === length) {
-      return items[i]
+  let newArr = []
+  for (let letters of items) {
+    if (letters.length === length) {
+      newArr.push(letters)
     }
+  }
+  return newArr
 }
 
 // Return an array with every other element from the input array (start with index 0).
@@ -54,7 +57,13 @@ function itemsWithLength(items, length) {
 //   everyOtherItem(['a', 'b', 'c', 'd', 'e']);
 //   => ['a', 'c', 'e']
 function everyOtherItem(items) {
-  
+  let newArr = []
+
+  for (let i = 0; i < items.length; i++)
+    if (i % 2 === 0) {
+      newArr.push(items[i])
+    }
+    return newArr
 }
 
 // Given a list of words and a letter, return the indexes of the words that
@@ -63,7 +72,15 @@ function everyOtherItem(items) {
 // Ex.:
 //   findWordsStartingWith(['apple', 'banana', 'kiwi', 'pear', 'bacon'], 'b');
 //   => [1, 4]
-function findWordsStartingWith(words, letter) {}
+function findWordsStartingWith(words, letter) {
+  let newArr = []
+  for (let i = 0; i < words.length; i++) {
+    if (words[i][0] === letter) {
+      newArr.push(i)
+    }
+  }
+  return newArr
+}
 
 // Return the `n` smallest values in the array in descending order (largest
 // numbers first). Assume that `n` will always be less than the length of the
@@ -71,7 +88,20 @@ function findWordsStartingWith(words, letter) {}
 // Ex.:
 //   smallestNItems([1, 30, 4, 21, 100000], 3);
 //   => [21, 4, 1]
-function smallestNItems(items, n) {}
+
+function smallestNItems(items, n) {
+  let newArr = []
+
+// while () {
+//     let minNum = Math.min(...items)
+//     newArr.push(minNum)
+    
+//     if (newArr.length === n) {
+//       break
+//     }
+//   }
+  return newArr
+}
 
 // Search for a value in the array and return its index. If the value appears
 // more than once, return the index of the *FIRST* occurrence of the value. If
@@ -93,7 +123,13 @@ function findIndex(items, value) {
 // Ex.:
 //   range(1, 5);
 //   => [1, 2, 3, 4, 5]
-function range(start, stop) {}
+function range(start, stop) {
+  let newArr = []
+  for (let i = start; i < stop; i++) {
+    newArr.push(i)
+  }
+  return newArr
+}
 
 export {
   bWords,

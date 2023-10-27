@@ -46,6 +46,7 @@ function fullName(firstName, lastName) {
 //   => 'Kay was drinking coffee at the local cafe.'
 
 function generateSentence(person, beverage, location) {
+  
   return `${person} was drinking ${beverage} at ${location}`
 }
 
@@ -82,13 +83,14 @@ function censorVowels(string) {
 function stickyCase(string) {
   let newArr = []
 
-  for (let letter of string) {
-    if (letter % 2 === 0 ) {
-      newArr += letter.toUpperCase()
+  for (let i = 0; i < string.length; i++) {
+    if (i % 2 !== 0) {
+      newArr.push(string[i].toUpperCase())
+    } else {
+      newArr.push(string[i].toLowerCase())
     }
   }
-
-  return newArr
+  return newArr.join('')
 }
 
 // Return the given string in leetspeak. Leetspeak is a modified version of
