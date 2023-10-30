@@ -46,7 +46,6 @@ function fullName(firstName, lastName) {
 //   => 'Kay was drinking coffee at the local cafe.'
 
 function generateSentence(person, beverage, location) {
-  
   return `${person} was drinking ${beverage} at ${location}`
 }
 

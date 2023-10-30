@@ -91,15 +91,16 @@ function findWordsStartingWith(words, letter) {
 
 function smallestNItems(items, n) {
   let newArr = []
+  while (items.length > 0) {
+    let minNum = Math.min(...items)
+    newArr.push(minNum)
 
-// while () {
-//     let minNum = Math.min(...items)
-//     newArr.push(minNum)
-    
-//     if (newArr.length === n) {
-//       break
-//     }
-//   }
+  items.splice(items.indexOf(minNum), 1)
+
+    if (newArr.length === n) {
+      break
+    }
+  }
   return newArr
 }
 
@@ -125,7 +126,7 @@ function findIndex(items, value) {
 //   => [1, 2, 3, 4, 5]
 function range(start, stop) {
   let newArr = []
-  for (let i = start; i < stop; i++) {
+  for (let i = start; i <= stop; i++) {
     newArr.push(i)
   }
   return newArr
